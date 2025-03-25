@@ -70,6 +70,37 @@ function Main(props) {
             document.body.removeChild(input);
             
             // Exibe o alerta
+            alert('Chave copiada para a área de transferência!');
+        } else {
+            alert('Elemento com a classe "chave" não encontrado.');
+        }
+    }
+    function copi2(){
+        
+        copiar("f");
+
+    }
+    function copiar(nome) {
+        // Seleciona o elemento com a classe 'chave'
+        const chaveElement = document.querySelector('#'+nome);
+    
+        if (chaveElement) {
+            // Cria um elemento de input temporário para copiar o texto
+            const input = document.createElement('input');
+            input.value = chaveElement.textContent; // Pega o conteúdo do elemento
+            document.body.appendChild(input);
+            
+            // Seleciona o conteúdo do input
+            input.select();
+            input.setSelectionRange(0, 99999); // Para dispositivos móveis
+            
+            // Copia o conteúdo para a área de transferência
+            document.execCommand('copy');
+            
+            // Remove o input temporário
+            document.body.removeChild(input);
+            
+            // Exibe o alerta
             alert('Texto copiado para a área de transferência!');
         } else {
             alert('Elemento com a classe "chave" não encontrado.');
@@ -95,8 +126,9 @@ function Main(props) {
         if (props.tipo === "c") {
             return (
                 <>
-                    <h2 className='chave' onClick={copiarChave}>{`Sua Chave é: ${chave}`}</h2>
-
+                <div className='d'>
+                    <h2 className='chave' onClick={copiarChave}>Sua chave é: < bold id = "cha">{chave}</bold></h2>
+                </div>
                     <button onClick={() => setChave(gerar())}>Gerar outra Chave Aleatoria</button>
                 </>
             );
@@ -117,9 +149,10 @@ function Main(props) {
             <textarea placeholder={place(props)} rows="4" cols="50" onChange={e => setTexto(e.target.value)} />
             
             <h2 className='titles'>Texto Pronto:</h2>
-            <h3>{final}</h3>
+            <h3 id= "f">{final}</h3>
 
             {gerarChave(props, chave, setChave)}
+            <button className='but' onClick={copi2}>Compartilhar</button>
         </div>
     );
 }

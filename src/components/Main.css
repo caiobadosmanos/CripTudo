@@ -1,6 +1,6 @@
 /* Main.css */
 .main-container {
-    height: 100vh;
+    height: 120vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,4 +59,70 @@
 .chave{
     text-decoration: underline;
     cursor:pointer;
+}
+
+/* Estilo do botão */
+.but {
+    padding: 20px 40px;
+    font-size: 35px;
+    font-weight: bold;
+    color: #fff;
+    
+    background: linear-gradient(45deg, #04e2d7, #0d09ee);
+    border: 2px solid transparent;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 5 5px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    margin:10vh;
+    
+}
+
+/* Efeito de hover */
+.but::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.5s;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.but:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Efeito de hover e foco */
+.but:hover {
+    background: linear-gradient(45deg, #09eebc, #0059ff);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+}
+
+/* Efeito de clique */
+.but:active {
+    background: linear-gradient(45deg, #00d9ff, #2009ee);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(2px);
+}
+
+/* Efeito de foco */
+.but:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2px rgba(0, 100, 255, 0.6);
+}
+
+/* Adicionando animação de brilho */
+.but:hover {
+    animation: brilho 1.5s infinite ease-in-out;
+}
+.d{
+    display: flex;
 }
