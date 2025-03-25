@@ -1,0 +1,36 @@
+.boxHeader {
+    width: 100%; /* Altere de 100vw para 100% */
+    color: #f9f9f9;
+    background-color: black;
+    display: flex;
+    justify-content: space-between; /* Adiciona o espaçamento entre os itens */
+    padding: 0 20px; /* Adiciona algum padding para evitar encostar nas bordas */
+    box-sizing: border-box; /* Garante que o padding não quebre o layout */
+}
+
+.itemHeader {
+    color: #f9f9f9;
+    display: flex;
+    align-items: center; /* Garante que os itens fiquem alinhados verticalmente */
+}
+
+.itemI {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.titleHeader {
+    text-align: left;
+}
+
+body {
+    margin: 0;
+    font-family: Poppins;
+    color: black;
+}
+
+h2 {
+    text-align: left;
+}
